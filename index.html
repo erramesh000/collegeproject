@@ -90,9 +90,67 @@
             padding: 6px 50px;
         }
 
+        body {
+            background: #f7f8fa;
+        }
+
+        .search-card {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgb(0 0 0 / 37%);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-teal {
+            background-color: #009688;
+            color: #fff;
+        }
+
+        .btn-teal:hover {
+            background-color: #00796b;
+        }
+
+        .recycling-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .recycling-item {
+            background: #e6fcf7;
+            border-radius: .75rem;
+            margin-bottom: 1rem;
+            padding: 1rem 1.25rem;
+        }
+
+        #contact {
+            color: #000000b3;
+        }
+
+        .whyrecycle p {
+            color: #000000b3;
+        }
+
+        .whyrecycle h2,
+        h5 {
+            color: black;
+        }
+
+        .fw-bold {
+            font-weight: 700 !important;
+        }
+
+        #faq {
+            width: 50%;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding: 2rem 0;
+            }
+
+            #faq {
+                width: 90%;
             }
 
             .stat-card {
@@ -117,16 +175,16 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Find Centers</a>
+                        <a class="nav-link" href="#findcenters">Find Centers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -171,32 +229,373 @@
             </div>
         </div>
     </section>
+    <div class="container py-5">
+        <h2 class="text-center fw-bold mb-5">Find E-Waste Recycling Centers Near You</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="search-card">
+                    <form class="row g-3 align-items-end">
+                        <div class="col-md-6">
+                            <label for="location" class="form-label">Enter your location</label>
+                            <input type="text" class="form-control" id="location" placeholder="City, State or Zip Code">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="distance" class="form-label">Distance</label>
+                            <select class="form-select" id="distance">
+                                <option>10 miles</option>
+                                <option selected>25 miles</option>
+                                <option>50 miles</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-teal w-100">Search</button>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="useLocation">
+                                <label class="form-check-label" for="useLocation">
+                                    Use my current location
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="mb-4">Find E-Waste Recycling Centers Near You</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Enter your location...">
-                        <button class="btn btn-primary" type="button">Search</button>
+        </div>
+
+        <div class="row mt-4" id="findcenters">
+            <div class="col-lg-8 mb-4" style="height: 40%;">
+                <div class="ratio ratio-4x3 border rounded shadow-sm">
+                    <!-- Replace with Leaflet map for real data -->
+                    <!-- <iframe src="https://www.openstreetmap.org/export/embed.html" style="border: none;"></iframe> 
+                     -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109782.87829261528!2d76.61497891320774!3d30.698295388807644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fee906da6f81f%3A0x512998f16ce508d8!2sSahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1750698332496!5m2!1sen!2sin"
+                        width="600" height="350px" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm p-3" style="height: 70%;">
+                    <h5 class="fw-bold mb-3">Recycling Centers</h5>
+                    <div class="recycling-list">
+                        <div class="recycling-item">
+                            <h6 class="fw-bold mb-1">EcoSolutions E-Waste</h6>
+                            <p class="mb-1">456 Broadway, New York, NY 10013</p>
+                            <p class="mb-1">(212) 555-5678</p>
+                            <p class="mb-1">Mon-Sat: 8AM–7PM</p>
+                            <a href="#">Visit Website</a>
+                        </div>
+                        <div class="recycling-item">
+                            <h6 class="fw-bold mb-1">City Recycling Center</h6>
+                            <p class="mb-1">789 Park Ave, New York, NY 10021</p>
+                            <p class="mb-1">(212) 555-9012</p>
+                            <p class="mb-1">Mon-Fri: 8AM–8PM, Sat–Sun: 9AM–5PM</p>
+                            <a href="#">Visit Website</a>
+                        </div>
+                        <div class="recycling-item">
+                            <h6 class="fw-bold mb-1">EcoSolutions E-Waste</h6>
+                            <p class="mb-1">456 Broadway, New York, NY 10013</p>
+                            <p class="mb-1">(212) 555-5678</p>
+                            <p class="mb-1">Mon-Sat: 8AM–7PM</p>
+                            <a href="#">Visit Website</a>
+                        </div>
+                        <div class="recycling-item">
+                            <h6 class="fw-bold mb-1">EcoSolutions E-Waste</h6>
+                            <p class="mb-1">456 Broadway, New York, NY 10013</p>
+                            <p class="mb-1">(212) 555-5678</p>
+                            <p class="mb-1">Mon-Sat: 8AM–7PM</p>
+                            <a href="#">Visit Website</a>
+                        </div>
+                        <div class="recycling-item">
+                            <h6 class="fw-bold mb-1">EcoSolutions E-Waste</h6>
+                            <p class="mb-1">456 Broadway, New York, NY 10013</p>
+                            <p class="mb-1">(212) 555-5678</p>
+                            <p class="mb-1">Mon-Sat: 8AM–7PM</p>
+                            <a href="#">Visit Website</a>
+                        </div>
+                        <!-- Add more entries here -->
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <!-- Add below your main container, before </body> -->
+
+    </div>
+    <div class="py-5 whyrecycle" id="about" style="background:#f7f8fa;">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-3">Why Recycle E-Waste?</h2>
+            <p class="text-center mb-5" style="max-width:700px;margin:auto;">
+                Electronic waste contains toxic materials that can harm the environment and human health if not
+                disposed
+                of
+                properly. Recycling e-waste helps recover valuable materials and reduces the need for mining raw
+                materials.
+            </p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="p-4 h-100" style="background:#e6fcf7;border-radius:1rem;">
+                        <div class="mb-3" style="font-size:2rem;color:#009688;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                class="bi bi-globe2" viewBox="0 0 16 16">
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0 0 14A7 7 0 0 0 8 1z" />
+                                <path d="M8 1a7 7 0 0 0 0 14A7 7 0 0 0 8 1zm0 1a6 6 0 0 1 0 12A6 6 0 0 1 8 2z" />
+                            </svg>
+                        </div>
+                        <h5 class="fw-bold">Environmental Protection</h5>
+                        <p class="mb-0">Prevents toxic materials like lead, mercury, and cadmium from contaminating
+                            soil
+                            and
+                            water sources.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 h-100" style="background:#e6fcf7;border-radius:1rem;">
+                        <div class="mb-3" style="font-size:2rem;color:#009688;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                class="bi bi-clock-history" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.515 3.879a.5.5 0 0 1 .485.621l-.5 2a.5.5 0 0 1-.97-.242l.5-2a.5.5 0 0 1 .485-.379z" />
+                                <path
+                                    d="M8 1a7 7 0 1 0 7 7A7 7 0 0 0 8 1zm0 1a6 6 0 1 1-6 6A6 6 0 0 1 8 2zm0 2a.5.5 0 0 1 .5.5v3.707l2.146 2.147a.5.5 0 0 1-.708.708l-2.293-2.293A.5.5 0 0 1 7.5 8V4.5A.5.5 0 0 1 8 4z" />
+                            </svg>
+                        </div>
+                        <h5 class="fw-bold">Resource Conservation</h5>
+                        <p class="mb-0">Recovers valuable materials like gold, silver, copper, and rare earth
+                            elements
+                            that can
+                            be reused in new products.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 h-100" style="background:#e6fcf7;border-radius:1rem;">
+                        <div class="mb-3" style="font-size:2rem;color:#009688;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                class="bi bi-shield-check" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.854 8.146a.5.5 0 0 1 .708 0L8 9.586l1.438-1.44a.5.5 0 1 1 .707.708l-1.792 1.793a.5.5 0 0 1-.707 0L5.854 8.854a.5.5 0 0 1 0-.708z" />
+                                <path
+                                    d="M8 0c-.69 0-1.342.176-1.93.5C4.342.824 3.69 1.176 3.07 1.5 2.45 1.824 1.798 2.176 1.07 2.5A1 1 0 0 0 0 3.5v3.1c0 4.418 3.134 7.197 7.684 8.482a1.007 1.007 0 0 0 .632 0C12.866 13.797 16 11.018 16 6.6V3.5a1 1 0 0 0-1.07-1c-.728-.324-1.38-.676-2-1C9.342.176 8.69 0 8 0zm0 1c.638 0 1.25.162 1.82.47.57.308 1.13.66 1.68.97.55.31 1.1.662 1.68.97A.5.5 0 0 1 14 3.5v3.1c0 3.982-2.826 6.41-7 7.682C3.826 13.01 1 10.582 1 6.6V3.5a.5.5 0 0 1 .82-.47c.58-.308 1.13-.66 1.68-.97.55-.31 1.11-.662 1.68-.97A6.978 6.978 0 0 1 8 1z" />
+                            </svg>
+                        </div>
+                        <h5 class="fw-bold">Data Security</h5>
+                        <p class="mb-0">Proper e-waste recycling ensures your personal data is securely wiped from
+                            devices
+                            before processing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5" style="background:#f7f8fa;">
+        <div class="container" id="faq">
+            <h2 class="text-center fw-bold mb-4" style="color: #000000c4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 rounded-3 shadow-sm border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq1">
+                            What items are considered e-waste?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            E-waste includes computers, laptops, mobile phones, tablets, TVs, printers, batteries, and
+                            other
+                            electronic devices.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 rounded-3 shadow-sm border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                            How should I prepare my devices for recycling?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Remove all personal data, factory reset your device, and remove batteries if possible before
+                            recycling.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 rounded-3 shadow-sm border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+                            Is there a fee for recycling electronics?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Some centers recycle electronics for free, while others may charge a small fee for certain
+                            items.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 rounded-3 shadow-sm border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq4">
+                            Can I donate my old electronics instead?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, many organizations accept working electronics as donations for reuse or refurbishment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Us Section -->
+    <div class="py-5" style="background:#f7f8fa;">
+        <div class="container" id="contact">
+            <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+            <div class="mx-auto" style="max-width:700px;">
+                <form class="p-4" style="background:#e6fcf7; border-radius:1rem;" novalidate>
+                    <p class="text-center mb-4">
+                        Have questions about e-waste recycling or suggestions for our website? We’d love to hear from
+                        you!
+                    </p>
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="contactName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="invalid-feedback">Please enter your name.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="contactSubject" required>
+                        <div class="invalid-feedback">Please enter a subject.</div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="contactMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                        <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-teal px-4" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="scrollTopBtn" class="btn btn-teal rounded-circle shadow"
+        style="position: fixed; bottom: 30px; right: 30px; display: none; z-index: 1050;">
+        <i class="bi bi-arrow-up-short fs-2"></i>
+    </button>
+    <script>
+        // Bootstrap validation
+        (() => {
+            'use strict';
+            const forms = document.querySelectorAll('form');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+
+        // Show button when scrolled down
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        // Smooth scroll to top
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2025 EcoRecycle. All rights reserved.</p>
-            <p>Helping to make the planet greener, one device at a time.</p>
+    <footer class="pt-5 pb-3" style="background:#0d9488 !important; color:#fff;">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#00e6c3" class="me-2"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M8.5 1a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5A.5.5 0 0 1 8.5 1zm-6 7a.5.5 0 0 1 .5-.5H3a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 2.5 8zm11 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H13.5a.5.5 0 0 1-.5-.5zm-6.364 4.95a.5.5 0 0 1 .707 0l1.06 1.06a.5.5 0 0 1-.707.708l-1.06-1.06a.5.5 0 0 1 0-.708zm6.364-6.364a.5.5 0 0 1 .707 0l1.06 1.06a.5.5 0 0 1-.707.708l-1.06-1.06a.5.5 0 0 1 0-.708z" />
+                            <path d="M8 4a4 4 0 1 1 0 8A4 4 0 0 1 8 4z" />
+                        </svg>
+                        <span class="fw-bold fs-5">EcoRecycle</span>
+                    </div>
+                    <p class="small mb-0" style="color:#cfd8dc;">Making e-waste recycling accessible and
+                        convenient
+                        for everyone.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">Home</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">Find Centers</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">About</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">FAQ</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">E-Waste Guide</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">Recycling Tips</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">Environmental
+                                Impact</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none" style="color:#cfd8dc;">Partner With Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Connect With Us</h6>
+                    <div class="mb-2">
+                        <a href="#" class="me-2 text-decoration-none" style="color:#cfd8dc;"><i
+                                class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="me-2 text-decoration-none" style="color:#cfd8dc;"><i
+                                class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="me-2 text-decoration-none" style="color:#cfd8dc;"><i
+                                class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="me-2 text-decoration-none" style="color:#cfd8dc;"><i
+                                class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                    <form class="d-flex" style="max-width:260px;">
+                        <input type="email" class="form-control form-control-sm me-2" placeholder="Your email">
+                        <button class="btn btn-teal btn-sm" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color:#374151;">
+            <div class="text-center small" style="color:#cfd8dc;">© 2025 EcoRecycle. All rights reserved.</div>
         </div>
     </footer>
+    <!-- Bootstrap Icons CDN (add in <head> if not already present) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
